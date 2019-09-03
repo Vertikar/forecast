@@ -1,18 +1,17 @@
-forecast
-========
+# forecast
 
-Forecast.io v2 API wrapper in Go (Golang)
+Dark Sky API wrapper in Go (Golang)
 
-Documentation: https://developer.forecast.io/docs/v2
+Documentation: https://darksky.net/dev/docs
 
 Example usage:
 
-```
+```go
 package main
 
 import (
     "fmt"
-    forecast "github.com/mlbright/forecast/v2"
+    forecast "github.com/mlbright/darksky/v2"
     "io/ioutil"
     "log"
     "strings"
@@ -30,7 +29,7 @@ func main() {
     lat := "43.6595"
     long := "-79.3433"
 
-    f, err := forecast.Get(key, lat, long, "now", forecast.CA)
+    f, err := forecast.Get(key, lat, long, "now", forecast.CA, forecast.English)
     if err != nil {
         log.Fatal(err)
     }
